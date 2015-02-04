@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
-
+  <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cardo:700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/stylesheets/index/reset.css"> <!-- CSS reset -->
   <link rel="stylesheet" href="/stylesheets/index/style.css"> <!-- Resource style -->
   <script src="javascripts/Index/modernizr.js"></script> <!-- Modernizr -->
@@ -15,7 +16,16 @@
 <body>
 <main id="cd-main-content">
   <section id="cd-intro">
-    <h1>Full Page Intro &amp; Navigation</h1>
+
+    <div id="first-tile">
+      <button class="sign">Sign In/Up</button>
+      <h2>Why waste your next lunch break?</h2>
+
+      <div class="tagline">
+        <h4>Grab ____________ and hear interesting things</h4>
+        <noun>Coffee</noun>
+      </div>
+    </div>
 
     <header class="cd-header">
       <div id="cd-logo"><button name="button" class="btn">Chat Now</button></div>
@@ -40,5 +50,27 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="javascripts/Index/main.js"></script> <!-- Resource jQuery -->
+<script src="/javascripts/Index/jquery.text.fadeto.js" charset="utf-8">
+</script>
+<script charset="utf-8">
+$( function () {
+
+  var array = ["Coffee","a Bagel", "Lunch", "Take-Out", "Dinner"];
+  // var i = ;
+  randStatement = function () {
+    return array[Math.floor(Math.random() *array.length)];
+
+  };
+
+  setInterval(function(){
+    $('noun').fadeTo(randStatement() , {
+      fadeInLength  : 1000,
+      fadeOutLength : 1500,
+      fadeInEasing  : 'ease-in',
+      fadeOutEasing : 'ease-out'
+    });
+  }, 3000);
+});
+</script>
 </body>
 </html>

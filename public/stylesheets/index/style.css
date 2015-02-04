@@ -439,3 +439,175 @@ Main components
 .btn:active:after {
   width: 100%;
 }
+
+p.flip {
+  display: none;
+}
+
+#first-tile h2 {
+  position: absolute;
+  font-size: 48px;
+  font-weight: bold;
+  padding-left: 13%;
+  padding-top: 110px;
+  color: #22313F;
+  transition: 1s;
+  /*text-shadow: 1px 2px #cccccc;*/
+  font-family: 'Cardo', serif;
+}
+
+#first-tile h4 {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 160px 1px;
+  margin-left: 275px;
+  color: #22313F;
+  transition: 1s;
+  /*text-shadow: 1px 2px #cccccc;*/
+  font-family: 'Cardo', serif;
+}
+
+#first-tile {
+  width: 100%;
+  display: block;
+}
+
+#first-tile img {
+  width: 100%;
+  display: block;
+}
+
+noun {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 350px;
+  margin-top: 190px;
+  color: #16a085;
+  font-family: 'Cardo', serif;
+}
+
+.sign {
+  -webkit-appearance: none;
+  border: none;
+  background: inherit;
+  margin: 14px;
+  padding: 10px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  font-family: 'Lato', 'san-serif';
+  font-size: 16px;
+  font-weight:  300;
+  border-radius: 20%/50%;
+  border: 1px solid #34495e;
+  color: #34495e;
+  transition: 0.5s;
+}
+.sign:hover {
+  cursor: pointer;
+  color: white;
+  background: #34495e;
+  box-shadow:
+  1px 1px #53a7ea,
+  2px 2px #53a7ea,
+  3px 3px #53a7ea;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
+@media screen and (max-width: 900px) {
+
+  #first-tile h2 {
+    padding: 10%;
+    font-size: 36px;
+  }
+
+  #first-tile h4 {
+    font-size: 24px;
+    padding: 100px;
+    margin-left: 25px;
+  }
+
+  noun {
+    position: absolute;
+    margin-top: 132px;
+    margin-left: 210px;
+    font-size: 24px;
+
+  }
+
+  /*.sign {
+  margin: 10px;
+  padding: 5px;
+  font-size: 12px;
+  }*/
+
+}
+
+/*Ipad size not available suckas */
+/*@media screen and (max-width: 750px) {
+
+#first-tile h2 {
+padding-left: 12%;
+padding-top: 60px;
+font-size: 18px;
+}
+
+#first-tile h4 {
+font-size: 12px;
+padding: 70px 18px;
+margin-left: 56px;
+}
+
+noun {
+position: absolute;
+margin-top: 85px;
+margin-left: 115px;
+font-size: 12px;
+transition: 1.5s;
+
+}
+
+.sign {
+margin: 10px;
+padding: 5px;
+font-size: 12px;
+}
+
+
+}*/
+
+
+@media screen and (max-width: 450px) {
+
+  #first-tile h2 {
+    padding-left: 12%;
+    padding-top: 60px;
+    font-size: 18px;
+  }
+
+  #first-tile h4 {
+    font-size: 12px;
+    padding: 70px 18px;
+    margin-left: 56px;
+  }
+
+  noun {
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 115px;
+    font-size: 12px;
+    transition: 1.5s;
+
+  }
+
+  .sign {
+    margin: 10px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+
+}
