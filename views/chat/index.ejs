@@ -7,16 +7,12 @@
     <script>
 
     var myFirebaseRef = new Firebase("https://tabletalk.firebaseio.com/peerids");
-    var snap = undefined;
+    var snap = null;
     myFirebaseRef.limitToFirst(1).once("value", function(snapshot) {
       snap = snapshot.val();
-      console.log(snap)
-      // for ( i in snap ) {
-      //   console.log(i);
-      //   if( i !== 'undefined') {
-      //     key = i;
-      //   }
-      // }
+      console.log("HELLO")
+      console.log(snap);
+
     });
 
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
@@ -29,9 +25,10 @@
     var localId;
     peer.on('open', function(id) {
       localId = id;
-      console.log(snap)
-      if (snap === null) {
 
+
+      if (snap === null) {
+        step1();
         myFirebaseRef.set({
           peerid: localId
         });
@@ -40,6 +37,7 @@
         peer.on('call', function(call){
           // Answer the call automatically (instead of prompting user) for demo purposes
           call.answer(window.localStream);
+          console.log(call);
           step3(call);
         });
 
@@ -48,14 +46,15 @@
           // Return to step 2 if error occurs
           step2();
         });
+
+
       } else {
 
         myFirebaseRef.remove();
-        console.log(snap.peerid);
 
         $( function() {
-            var call = peer.call(snap.peerid, window.localStream);
-            step3(call);
+          step1();
+
 
           $('#end-call').click(function(){
             window.existingCall.close();
@@ -68,39 +67,41 @@
             step1();
           });
 
-          // Get things started
-          step1();
-        });
+          peer.on('error', function(err){
+            alert(err.message);
+            // Return to step 2 if error occurs
+            step2();
+          });
 
+        });
       }
 
     });
 
 
-    // // Receiving a call
-    // peer.on('call', function(call){
-    //   // Answer the call automatically (instead of prompting user) for demo purposes
-    //   call.answer(window.localStream);
-    //   step3(call);
-    // });
-    //
-    // peer.on('error', function(err){
-    //   alert(err.message);
-    //   // Return to step 2 if error occurs
-    //   step2();
-    // });
-
-    // Click handlers setup
 
     function step1 () {
       // Get audio/video stream
-      navigator.getUserMedia({audio: true, video: true}, function(stream){
+      navigator.getUserMedia(
+        {audio: true, video: true},
+
+        function(stream) {
         // Set your video displays
         $('#my-video').prop('src', URL.createObjectURL(stream));
 
         window.localStream = stream;
+
+          if(snap !== null) {
+            console.log("HELLO")
+            var call = peer.call(snap.peerid, window.localStream);
+            step3(call);
+
+          }
+
         step2();
-      }, function(){ $('#step1-error').show(); });
+      },
+
+      function(){ alert("FAILED"); });
     }
 
     function step2 () {
@@ -126,7 +127,7 @@
       $('#step1, #step2').hide();
       $('#step3').show();
     }
-    step1()
+
   </script>
 
   </head>
