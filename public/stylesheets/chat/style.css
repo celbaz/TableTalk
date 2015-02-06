@@ -1,0 +1,67 @@
+#localvideo {
+  width: 47%;
+  float: right;
+  margin-right: 1.5%;
+  margin-top: 1.5%;
+}
+
+#my-video {
+  width: 100%;
+  /*height: 100%;*/
+  margin: auto;
+  border: 4px solid #e74c3c;
+  border-radius: 5px;
+  /*background: #95a5a6;*/
+}
+
+#remotevideo {
+  margin-top: 1.5%;
+  margin-left: 1.5%;
+  width: 47%;
+  float: left;
+  /*height: 400px;*/
+}
+
+#their-video {
+  width: 100%;
+  /*height: 100%;*/
+  margin: auto;
+  border: 4px solid #16a085;
+  border-radius: 5px;
+  /*background: #95a5a6;*/
+}
+
+body {
+  background:  url("/images/hekp.jpeg") no-repeat center center;
+  -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+
+group {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.cd-header {
+  /*position: absolute;*/
+  background: rgba(58, 57, 63, 0.6);
+  /*bottom: 0;*/
+
+}
+
+html {
+  overflow: hidden;
+}
+
+#cd-logo {
+  float:left;
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 1px;
+  font-size: 29px;
+  font-weight: bold;
+  font-size;
+  color: white;
+}

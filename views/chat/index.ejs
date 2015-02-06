@@ -4,6 +4,10 @@
     <script src="javascripts/chat/peer.js"></script>
     <script src="javascripts/jquery-2.1.3.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.1.2/firebase.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="stylesheets/index/style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/chat/style.css" media="screen" title="no title" charset="utf-8">
     <script>
 
     var myFirebaseRef = new Firebase("https://tabletalk.firebaseio.com/peerids");
@@ -132,59 +136,50 @@
 
   </head>
   <body>
-    <style media="screen">
-      /*#my-video {
-        width: 100%;
-        height: 450px;
-      }
 
-      #name {
-        width: 100%;
-        overflow: hidden;
-        height: 400px;
-      }*/
-    </style>
 
-    <div class="pure-g">
+    <div class="pure-g group">
 
       <!-- Video area -->
       <div class="pure-u-2-3" id="video-container">
-        <div id="name">
-        <video style="border: 1px solid red" id="my-video" muted="true" autoplay></video>
+        <div id="localvideo">
+        <video id="my-video" muted="true" autoplay></video>
         </div>
-          <video id="their-video" style="border: 1px solid blue" autoplay></video>
+        <div id="remotevideo">
+          <video id="their-video" autoplay></video>
+        </div>
       </div>
 
       <!-- Steps -->
-      <div class="pure-u-1-3">
-        <h2>Carl is actually fucking amazing Video Chat</h2>
-
+      <!-- <div class="pure-u-1-3"> -->
         <!-- Get local audio/video stream -->
-        <div id="step1">
+        <!-- <div id="step1">
           <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
           <div id="step1-error">
             <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
             <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
 
         <!-- Make calls to others -->
-        <div id="step2">
-          <p>Your id: <span id="my-id">...</span></p>
-          <p>Share this id</p>
-          <h3>Make a call</h3>
+        <!-- <div id="step2">
+
           <div class="pure-form">
             <input type="text" placeholder="Call user id..." id="callto-id">
             <a href="#" class="pure-button pure-button-success" id="make-call">Call</a>
           </div>
-        </div>
+        </div> -->
 
         <!-- Call in progress -->
-        <div id="step3">
+        <!-- <div id="step3">
           <p>Currently in call with <span id="their-id">...</span></p>
           <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
-        </div>
+        </div> -->
       </div>
   </div>
+    <header class="cd-header">
+      <div id="cd-logo">TABLETALK</div>
+      <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+    </header>
   </body>
 </html>
