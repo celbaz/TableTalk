@@ -175,6 +175,7 @@ Main components
 }
 
 .cd-menu-trigger {
+  /*color: #16a085;*/
   display: inline-block;
   position: absolute;
   right: 0;
@@ -401,21 +402,21 @@ Main components
 
 /*button styles*/
 .btn {
-  background: rgb(26, 188, 156);
+  background: transparent;
   position: relative;
   display: inline-block;
   padding: 10px 20px;
   font-weight: bold;
-  color: white;
+  color: #16a085;
   /*box-shadow: 0 3px 0 0 #070;*/
   border-radius: 5px;
-
+  border: 2px solid #16a085;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
-  transition: all 0.3s;
+  transition: all 1s;
 }
 
 .btn:after {
@@ -432,7 +433,8 @@ Main components
 }
 
 .btn:hover, .btn:active {
-  background: #0e83cd;
+  background:  #16a085;
+  color: white;
 }
 
 .btn:hover:after,
@@ -457,6 +459,7 @@ p.flip {
 }
 
 #first-tile h4 {
+  margin-top: 32px;
   position: absolute;
   font-size: 24px;
   font-weight: bold;
@@ -592,14 +595,15 @@ font-size: 12px;
     font-size: 12px;
     padding: 70px 18px;
     margin-left: 56px;
+
   }
 
   noun {
     position: absolute;
-    margin-top: 85px;
     margin-left: 115px;
     font-size: 12px;
     transition: 1.5s;
+    margin-top: 101px;
 
   }
 
